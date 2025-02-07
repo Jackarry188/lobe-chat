@@ -14,7 +14,7 @@ jobs:
   sync_latest_from_upstream:
     name: Sync latest commits from upstream repo
     runs-on: ubuntu-latest
-    if: ${{ github.event.repository.fork }}
+    if: ${{ github.ref == 'refs/heads/release' }}
 
     steps:
       - uses: actions/checkout@v4
