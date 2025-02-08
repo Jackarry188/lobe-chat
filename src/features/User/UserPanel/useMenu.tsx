@@ -1,18 +1,13 @@
-import { DiscordIcon, Icon } from '@lobehub/ui';
+import { Icon } from '@lobehub/ui';
 import { Badge } from 'antd';
 import { ItemType } from 'antd/es/menu/interface';
 import {
-  Book,
   CircleUserRound,
   Cloudy,
   Download,
-  Feather,
-  FileClockIcon,
   HardDriveDownload,
   HardDriveUpload,
-  LifeBuoy,
   LogOut,
-  Mail,
   Settings2,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -24,13 +19,8 @@ import type { MenuProps } from '@/components/Menu';
 import { enableAuth } from '@/const/auth';
 import { LOBE_CHAT_CLOUD } from '@/const/branding';
 import {
-  DISCORD,
-  DOCUMENTS_REFER_URL,
-  EMAIL_SUPPORT,
-  GITHUB_ISSUES,
   OFFICIAL_URL,
   UTM_SOURCE,
-  mailTo,
 } from '@/const/url';
 import { isServerMode } from '@/const/version';
 import DataImporter from '@/features/DataImporter';
@@ -167,54 +157,6 @@ export const useMenu = () => {
           {t('userPanel.cloud', { name: LOBE_CHAT_CLOUD })}
         </Link>
       ),
-    },
-    {
-      icon: <Icon icon={FileClockIcon} />,
-      key: 'changelog',
-      label: <Link href={'/changelog/modal'}>{t('changelog')}</Link>,
-    },
-    {
-      children: [
-        {
-          icon: <Icon icon={Book} />,
-          key: 'docs',
-          label: (
-            <Link href={DOCUMENTS_REFER_URL} target={'_blank'}>
-              {t('userPanel.docs')}
-            </Link>
-          ),
-        },
-        {
-          icon: <Icon icon={Feather} />,
-          key: 'feedback',
-          label: (
-            <Link href={GITHUB_ISSUES} target={'_blank'}>
-              {t('userPanel.feedback')}
-            </Link>
-          ),
-        },
-        {
-          icon: <Icon icon={DiscordIcon} />,
-          key: 'discord',
-          label: (
-            <Link href={DISCORD} target={'_blank'}>
-              {t('userPanel.discord')}
-            </Link>
-          ),
-        },
-        {
-          icon: <Icon icon={Mail} />,
-          key: 'email',
-          label: (
-            <Link href={mailTo(EMAIL_SUPPORT)} target={'_blank'}>
-              {t('userPanel.email')}
-            </Link>
-          ),
-        },
-      ],
-      icon: <Icon icon={LifeBuoy} />,
-      key: 'help',
-      label: t('userPanel.help'),
     },
     {
       type: 'divider',

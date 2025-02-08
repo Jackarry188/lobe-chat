@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation';
-import { Center } from 'react-layout-kit';
 
-import BrandWatermark from '@/components/BrandWatermark';
+// import BrandWatermark from '@/components/BrandWatermark';
 import { metadataModule } from '@/server/metadata';
 import { translation } from '@/server/translation';
 import { DynamicLayoutProps } from '@/types/next';
@@ -27,9 +26,7 @@ const Page = async (props: DynamicLayoutProps) => {
     <>
       <UserBanner />
       <Category />
-      <Center padding={16}>
-        <BrandWatermark />
-      </Center>
+      {/* <Center padding={16}><BrandWatermark /></Center> */}
     </>
   );
 };

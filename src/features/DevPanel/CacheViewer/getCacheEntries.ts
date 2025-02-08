@@ -33,7 +33,7 @@ export const getCacheFiles = async (): Promise<NextCacheFileData[]> => {
 
       return nextCacheFileSchema.parse({
         ...jsonData,
-        id: file,
+        id: `${file}`,
         timestamp: new Date(fileStats.birthtime),
       });
     } catch (error) {
@@ -41,7 +41,7 @@ export const getCacheFiles = async (): Promise<NextCacheFileData[]> => {
         const issues = error.issues;
         console.error(`File ${file} do not match the schema`, issues);
       }
-      console.error(`Error parsing ${file}`);
+      // console.error(`Error parsing ${file}`);
       return false;
     }
   })) as NextCacheFileData[];

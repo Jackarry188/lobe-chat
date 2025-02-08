@@ -1,4 +1,3 @@
-import { Github } from '@lobehub/icons';
 import { Grid } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
@@ -145,8 +144,8 @@ const Preview = memo(() => {
               OFFICIAL_URL
             ) : (
               <Flexbox align={'center'} gap={8} horizontal>
-                <Github size={16} />
-                <span>lobehub/lobe-chat</span>
+                {/* <Github size={16} />
+                <span>lobehub/lobe-chat</span> */}
               </Flexbox>
             )}
           </div>

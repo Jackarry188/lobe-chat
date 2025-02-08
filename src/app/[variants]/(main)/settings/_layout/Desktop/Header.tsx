@@ -7,7 +7,7 @@ import { Menu } from 'lucide-react';
 import { ReactNode, memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import BrandWatermark from '@/components/BrandWatermark';
+// import BrandWatermark from '@/components/BrandWatermark';
 
 const useStyles = createStyles(({ token, css }) => ({
   container: css`
@@ -76,7 +76,7 @@ const Header = memo<HeaderProps>(({ children, getContainer, title }) => {
         zIndex={10}
       >
         {children}
-        <BrandWatermark paddingInline={12} />
+        {/* <BrandWatermark paddingInline={12} /> */}
       </Drawer>
     </>
   );

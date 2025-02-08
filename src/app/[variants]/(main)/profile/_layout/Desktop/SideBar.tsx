@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
-import BrandWatermark from '@/components/BrandWatermark';
+// import BrandWatermark from '@/components/BrandWatermark';
 import CircleLoading from '@/components/Loading/CircleLoading';
 import PanelTitle from '@/components/PanelTitle';
 
@@ -36,7 +36,7 @@ const SidebarLayout = ({ children, className, title, desc, ...rest }: SidebarLay
     >
       <PanelTitle desc={desc || t('header.desc')} title={title || t('header.title')} />
       <Suspense fallback={<CircleLoading />}>{children}</Suspense>
-      <BrandWatermark paddingInline={12} />
+      {/* <BrandWatermark paddingInline={12} /> */}
     </Flexbox>
   );
 };
