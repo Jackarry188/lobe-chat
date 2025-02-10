@@ -62,7 +62,7 @@ const PWAInstall = memo(() => {
     // trigger the pwa installer and register the service worker
     if (isShowPWAGuide) {
       install();
-      if ('serviceWorker' in navigator && window.serwist !== undefined) {
+      if ('serviceWorker' in navigator && window !== undefined && window.serwist !== undefined) {
         window.serwist.register();
       }
     }
