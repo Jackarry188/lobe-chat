@@ -5,7 +5,7 @@
 export const LOBE_CHAT_CLOUD = 'Safe Cloud';
 
 export const BRANDING_NAME = '安全应用组';
-export const BRANDING_LOGO_URL = '';
+export const BRANDING_LOGO_URL = '/icons/icon-192x192.png';
 
 export const ORG_NAME = 'Safe';
 
