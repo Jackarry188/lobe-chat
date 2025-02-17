@@ -1,7 +1,7 @@
 ## Set global build ENV
 ARG NODEJS_VERSION="22"
 
-## Base image for all building stages
+## Base image for all building stages （使用官方Node.js镜像作为基础镜像）
 FROM node:${NODEJS_VERSION}-slim AS base
 
 ARG USE_CN_MIRROR
@@ -13,7 +13,7 @@ RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
         sed -i "s/deb.debian.org/mirrors.ustc.edu.cn/g" "/etc/apt/sources.list.d/debian.sources"; \
     fi \
-    # Add required package
+    # Add required package 更新APT包索引
     && apt update \
     && apt install ca-certificates proxychains-ng -qy \
     # Prepare required package to distroless
@@ -64,9 +64,10 @@ ENV NEXT_PUBLIC_ANALYTICS_UMAMI="${NEXT_PUBLIC_ANALYTICS_UMAMI}" \
 
 # Node
 ENV NODE_OPTIONS="--max-old-space-size=8192"
-
+# 设置工作目录
 WORKDIR /app
 
+# 复制package.json（如果有）到工作目录
 COPY package.json ./
 COPY .npmrc ./
 
@@ -85,12 +86,13 @@ RUN \
     && corepack enable \
     # Use pnpm for corepack
     && corepack use $(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json) \
-    # Install the dependencies
+    # Install the dependencies 安装依赖
     && pnpm i \
     # Add sharp dependencies
     && mkdir -p /deps \
     && pnpm add sharp --prefix /deps
 
+# 复制所有文件到工作目录
 COPY . .
 
 # run build standalone for docker version
@@ -221,9 +223,9 @@ ENV \
     ZHIPU_API_KEY="" ZHIPU_MODEL_LIST=""
 
 USER nextjs
-
+# 暴露端口
 EXPOSE 3210/tcp
 
 ENTRYPOINT ["/bin/node"]
-
+# 启动应用
 CMD ["/app/startServer.js"]
