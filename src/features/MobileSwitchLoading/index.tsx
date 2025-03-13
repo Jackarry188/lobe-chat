@@ -7,7 +7,7 @@ import { Center, Flexbox } from 'react-layout-kit';
 
 import { ProductLogo } from '@/components/Branding';
 
-// @ts-expect-error
+
 const MobileSwitchLoading: any = memo(() => {
   const { t } = useTranslation('common');
   return (
