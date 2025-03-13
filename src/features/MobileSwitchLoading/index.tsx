@@ -8,7 +8,7 @@ import { Center, Flexbox } from 'react-layout-kit';
 import { ProductLogo } from '@/components/Branding';
 
 // @ts-expect-error
-const MobileSwitchLoading: DynamicOptions['loading'] = memo(() => {
+const MobileSwitchLoading: any = memo(() => {
   const { t } = useTranslation('common');
   return (
     <Flexbox height={'100%'} style={{ position: 'relative', userSelect: 'none' }} width={'100%'}>
