@@ -51,10 +51,10 @@ ENV NEXT_PUBLIC_BASE_PATH="${NEXT_PUBLIC_BASE_PATH}"
 
 ENV NEXT_PUBLIC_SERVICE_MODE="${NEXT_PUBLIC_SERVICE_MODE:-server}" \
     NEXT_PUBLIC_ENABLE_NEXT_AUTH="${NEXT_PUBLIC_ENABLE_NEXT_AUTH:-1}" \
-    APP_URL="http://app.com" \
-    DATABASE_DRIVER="node" \
-    DATABASE_URL="postgres://postgres:password@localhost:5432/postgres" \
-    KEY_VAULTS_SECRET="use-for-build"
+    APP_URL="https://lobe.iaidaddy.com" \
+    DATABASE_DRIVER="neon" \
+    DATABASE_URL="postgres://neondb_owner:npg_7pKfEsVeJo8v@ep-restless-band-a50aq86u-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require" \
+    KEY_VAULTS_SECRET="Z/bttHDL63XBT/LIy78DeHmkD4Osi8TzqTzg/1NYcX8="
 
 # Sentry
 ENV NEXT_PUBLIC_SENTRY_DSN="${NEXT_PUBLIC_SENTRY_DSN}" \
@@ -164,7 +164,7 @@ ENV ACCESS_CODE="" \
 
 # Database
 ENV KEY_VAULTS_SECRET="" \
-    DATABASE_DRIVER="node" \
+    DATABASE_DRIVER="neon" \
     DATABASE_URL=""
 
 # Next Auth

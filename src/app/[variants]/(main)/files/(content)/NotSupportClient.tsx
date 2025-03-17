@@ -64,7 +64,7 @@ const useStyles = createStyles(({ css, token }) => ({
     margin-block-start: -44px;
   `,
 }));
-
+console.log('process.env.NEXT_PUBLIC_SERVICE_MODE', process.env.NEXT_PUBLIC_SERVICE_MODE);
 const NotSupportClient = () => {
   const { t } = useTranslation('file');
   const theme = useTheme();
