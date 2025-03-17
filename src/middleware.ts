@@ -12,6 +12,8 @@ import { OAUTH_AUTHORIZED } from './const/auth';
 
 export const config = {
   matcher: [
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+
     // include any files in the api or trpc folders that might have an extension
     '/(api|trpc|webapi)(.*)',
     // include the /
