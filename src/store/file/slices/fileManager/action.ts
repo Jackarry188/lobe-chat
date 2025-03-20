@@ -46,6 +46,7 @@ export const createFileManageSlice: StateCreator<
   FileManageAction
 > = (set, get) => ({
   dispatchDockFileList: (payload: UploadFileListDispatch) => {
+    console.log('去上传', payload);
     const nextValue = uploadFileListReducer(get().dockUploadFileList, payload);
     if (nextValue === get().dockUploadFileList) return;
 
@@ -86,6 +87,7 @@ export const createFileManageSlice: StateCreator<
     get().toggleParsingIds(ids, false);
   },
   pushDockFileList: async (rawFiles, knowledgeBaseId) => {
+    console.log('准备上传文件', rawFiles, knowledgeBaseId);
     const { dispatchDockFileList } = get();
 
     // 0. skip file in blacklist
