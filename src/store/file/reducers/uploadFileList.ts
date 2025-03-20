@@ -57,6 +57,7 @@ export const uploadFileListReducer = (
 ): UploadFileItem[] => {
   switch (action.type) {
     case 'addFile': {
+      console.log('****addFile***');
       return produce(state, (draftState) => {
         const { atStart, file } = action;
 
@@ -82,6 +83,7 @@ export const uploadFileListReducer = (
       });
     }
     case 'updateFile': {
+      console.log('****updateFile***');
       return produce(state, (draftState) => {
         const file = draftState.find((f) => f.id === action.id);
         if (file) {
